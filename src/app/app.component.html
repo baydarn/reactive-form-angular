@@ -1,0 +1,47 @@
+<h1>Department Selection Form</h1>
+
+<form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
+  <h2>Personal Information</h2>
+  <label>
+    First Name:
+    <input type="text" formControlName="name" placeholder="required" />
+  </label>
+
+  <label>
+    Phone Number:
+    <input type="text" formControlName="phoneNumber" placeholder="required" />
+  </label>
+
+  <label>Select Preferred Location:</label>
+  <select formControlName="preferredLocation">
+     (change)="selectLocation($event)">
+    <option *ngFor="let loc of locations" [ngValue]="loc">{{ loc }}</option>
+  </select>
+
+  <h2>Please select the department you want to work:</h2>
+  <div formGroupName="department" class="grouping">
+    <label>Software
+      <input formControlName="software" type="checkbox">
+    </label>
+    <label>Finance
+      <input formControlName="finance" type="checkbox">
+    </label>
+    <label>Marketing
+      <input formControlName="marketing" type="checkbox">
+    </label>
+  </div>
+
+  <h2>Reference(s)</h2>
+  <div formArrayName="references"
+    *ngFor="let ref of references.controls; let i = index" class="grouping">
+    <label>
+      Reference Email:
+      <input [formControlName]="i" type="text"
+      placeholder="optional">
+      <button type="button" (click)="removeEmail(i)"
+      id="remove_email">X</button>
+    </label>
+  </div>
+  <button type="button" (click)="addEmail()">Add Another Reference</button>
+  <button id="apply_button">Apply</button>
+</form>
