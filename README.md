@@ -1,4 +1,6 @@
-# MyFirstApp
+# Department Selection Form
+
+This is an example of reactive forms in angular.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
