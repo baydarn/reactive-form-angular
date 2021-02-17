@@ -1,6 +1,8 @@
 # Department Selection Form
 
-This is an example of reactive forms in angular.
+This is an example for reactive forms in angular.
+
+First run **"npm install"** and then run **"ng serve"** to see the application in action.🚀 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
